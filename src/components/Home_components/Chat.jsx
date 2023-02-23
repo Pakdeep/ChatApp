@@ -11,10 +11,13 @@ const Chat = () => {
     <div className="chat">
       <div className="messages">
       <div className="Head">
+      <div className="recent-chat">
+      <img src={data.user?.photoURL} alt="" />
         <span>{data.user?.displayName}</span>
+        </div>
         <div className="friend">
-          <UilVideo className="more"     />
-          <UilUserPlus className="more"  />
+          <div className="camera"><UilVideo className="more"     /></div>
+          <div className="camera"><UilUserPlus className="more"  /></div>
           <UilEllipsisH  />
         </div>
       </div>

@@ -14,7 +14,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
-    const displayName = e.target[0].value;
+    const displayName =
+      (e.target[0].value).charAt(0).toUpperCase() + (e.target[0].value).slice(1);
+
     const email = e.target[1].value;
     const password = e.target[2].value;
     const file = e.target[3].files[0];
@@ -57,7 +59,7 @@ const Register = () => {
       setErr(true);
       setLoading(false);
     }
-  };                             
+  };
 
   return (
     <div className="formContainer">
@@ -72,23 +74,35 @@ const Register = () => {
             <UilImagePlus size="40" />
             <span>Add an avatar</span>
           </label>
-          <div style={{height:"10px"}}> 
-          {loading && <span style={{fontSize:"8px",color:"aqua"}}>Uploading Avatar...</span> }
+          <div style={{ height: "10px" }}>
+            {loading && (
+              <span style={{ fontSize: "8px", color: "aqua" }}>
+                Uploading Avatar...
+              </span>
+            )}
           </div>
           <input style={{ display: "none" }} type="file" id="file" />
           <button>Sign Up</button>
           {err && <span> Something Went Wrong </span>}
         </form>
-        <p>Have an Account? <Link to={"/login"} style={{color:"aqua",textDecoration:"none"}}>Login</Link></p>
+        <p>
+          Have an Account?{" "}
+          <Link to={"/login"} style={{ color: "aqua", textDecoration: "none" }}>
+            Login
+          </Link>
+        </p>
       </div>
-      <p style={{
-        color: "aqua",
-        fontSize: "15px",
-        position:"absolute",
-        bottom:"7.5%"
-      }}>&copy;Deepjais <span style={{fontWeight:"bold"}}>2023</span> </p>
+      <p
+        style={{
+          color: "aqua",
+          fontSize: "15px",
+          position: "absolute",
+          bottom: "7.5%",
+        }}
+      >
+        &copy;Deepjais <span style={{ fontWeight: "bold" }}>2023</span>{" "}
+      </p>
     </div>
-    
   );
 };
 

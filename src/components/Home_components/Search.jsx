@@ -20,7 +20,7 @@ const Search = () => {
   const handleSearch = async () => {
     const q = query(
       collection(db, "users"),
-      where("displayName", "==", username)
+      where("displayName", "==", username.charAt(0).toUpperCase() + username.slice(1))
     );
     try {
       const querySnapshot = await getDocs(q);
@@ -77,7 +77,7 @@ const Search = () => {
         type="text"
         placeholder="Find a user"
         onKeyDown={handleKey}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => setUsername(e.target.value).charAt(0).toUpperCase() + (e.target.value).slice(1)}
       ></input>
 
       {err && <span>User not found!</span>}

@@ -234,8 +234,8 @@ body {
 
         .sidebar {
             position: relative;
-            
-            .userChat {                
+
+            .userChat {
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -446,7 +446,21 @@ body {
                 padding: 10px;
                 color: aqua;
 
+                .recent-chat {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 30px;
+                        outline: none;
+                        cursor: pointer;
+                    }
+                }
+
                 span {
+                    cursor: pointer;
+                    cursor: pointer;
+
                     font-weight: bold;
                     margin-left: 10px;
                 }
@@ -455,8 +469,15 @@ body {
                     display: flex;
                     align-items: center;
                     cursor: pointer;
-                    gap: 15px;
-                    padding: 10px 13px;
+                    gap: 8px;
+
+                    .camera {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 30px;
+                        height: 30px;
+                    }
 
                     .more:hover {
                         height: 28px;
@@ -464,7 +485,7 @@ body {
                     }
 
                     @include for-phone-only {
-                        gap: 8px;
+                        gap: 6px;
                     }
                 }
             }
@@ -536,7 +557,7 @@ body {
                         display: flex;
                         flex-direction: column;
                         gap: 10px;
-                        
+
 
 
                         p {
@@ -649,7 +670,7 @@ body {
                         color: white;
                         border: none;
                         font-weight: bold;
-                   
+
                     }
 
                 }
