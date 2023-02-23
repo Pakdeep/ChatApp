@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@mixin for-phone-only {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-only {
+    @media (max-width: 760px) {
+        @content;
+    }
+}
+
+@mixin for-laptop-only {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: aqua;
+    }
+
+
+
+    .formContainer {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        &::before {
+            content: "";
+            background: url("https://emojiguide.com/wp-content/uploads/2022/07/Yellow-smiles-background-1024x854.jpg") no-repeat center/cover;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .formWrapper {
+
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            background: transparent;
+            padding: 10px 30px;
+            border-radius: 20px;
+            border: 5px solid aqua;
+            box-shadow: 5px 5px 5px aqua;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                color: white;
+
+                input {
+                    font-family: 'Poppins', sans-serif;
+                    border-radius: 5px;
+                    text-align: center;
+                    margin-top: 5px;
+                    padding: 10px;
+                    border: none;
+                    border-right: none;
+                    border-bottom: 2.5px solid aqua;
+                    outline: none;
+                    background: transparent;
+                    color: #fff;
+                    font-size: 15px;
+                    width: 300px;
+
+                    &::placeholder {
+                        color: rgb(238, 228, 228);
+                        font-size: 10px;
+                    }
+
+                }
+
+
+
+                label {
+                    margin-top: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: aqua;
+                    cursor: pointer;
+
+
+                    span {
+                        color: rgb(224, 213, 213);
+
+                    }
+
+                    span:hover {
+                        color: aqua;
+                    }
+
+
+                }
+
+                input[type="file"] {
+                    border: none;
+                    font-size: 15px;
+                }
+
+                input:focus {
+                    box-shadow: 5px 5px 5px aqua;
+                }
+            }
+
+            .logo {
+                color: aqua;
+                font-weight: bold;
+                font-size: 30px;
+                text-shadow: 3px 1px 0px white;
+            }
+
+            .register {
+                margin-bottom: 10px;
+            }
+
+            button {
+                width: 200px;
+                margin: auto;
+                height: 25px;
+                margin-top: 10px;
+                border-radius: 10px;
+                border: 1px solid rgb(203, 216, 216);
+                color: aqua;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: aqua;
+                color: white;
+            }
+
+            p {
+                margin-top: 15px;
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+
+    .theme {
+        .dark {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            cursor: pointer;
+        }
+    }
+
+    &::before {
+        content: "";
+        background: url("https://emojiguide.com/wp-content/uploads/2022/07/Yellow-smiles-background-1024x854.jpg") no-repeat center/cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+    }
+
+
+    .container {
+        border: 5px solid aqua;
+        display: flex;
+        max-height: 700px;
+        width: 60%;
+        height: 90%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 2px 5px 8px aqua;
+
+        @include for-tablet-only {
+            max-width: 500px;
+            width: 90%;
+        }
+
+        @include for-phone-only {
+            width: 98%;
+            height: 90%;
+        }
+
+        @include for-laptop-only() {
+            width: 85%;
+            max-width: 600px;
+        }
+
+
+
+
+        .sidebar {
+            position: relative;
+            
+            .userChat {                
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 7px;
+                cursor: pointer;
+                color: aqua;
+                background-color: rgba(247, 233, 233, 0.2);
+                border-bottom: 1px solid aqua;
+                height: 60px;
+
+                span {
+                    font-size: 15px;
+                    font-weight: bold;
+
+                    @include for-phone-only {
+                        font-size: 10px;
+                    }
+                }
+
+                p {
+                    font-size: 10px;
+                    color: white;
+                    height: 12px;
+                    overflow: hidden;
+
+
+                    @include for-phone-only {
+                        display: none;
+                    }
+                }
+
+
+                &:hover {
+                    background-color: rgba(247, 233, 233, 0.2);
+                    border-bottom: 1px solid aqua;
+                    padding: 8px;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        padding: 0;
+                    }
+                }
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                    @include for-phone-only {
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+
+            .search {
+
+                input {
+                    width: 100%;
+                    height: 30px;
+                    color: aqua;
+                    border: none;
+                    border-bottom: 2px solid rgb(188, 197, 197);
+                    margin-bottom: 2px;
+                    background: transparent;
+                    outline: none;
+                    color: aqua;
+                    padding-left: 10px;
+
+                    &::placeholder {
+                        color: white;
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            flex: 1;
+
+            @include for-phone-only {
+                flex: 0.5;
+            }
+
+            background: transparent;
+            border: none;
+            border-right: 2px solid aqua;
+
+            .Navbar {
+                background-color: rgba(247, 233, 233, 0.2);
+                height: 50px;
+                color: aqua;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                position: relative;
+
+                @include for-phone-only {
+                    position: static;
+
+                }
+
+
+                .logo {
+                    font-weight: bold;
+                    font-size: 15px;
+                    text-shadow: 2px 0px 0px white;
+                    cursor: pointer;
+
+
+                    @include for-tablet-only {
+                        display: none;
+                    }
+
+                }
+
+                .user {
+                    display: flex;
+                    gap: 10px;
+                    font-size: 10px;
+                    font-weight: bold;
+                    align-items: center;
+
+                    span {
+                        cursor: pointer;
+
+                        @include for-phone-only {
+                            position: absolute;
+                            right: 5px;
+                        }
+                    }
+
+                    img {
+                        height: 28px;
+                        width: 28px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background-color: rgb(233, 219, 219);
+                        cursor: pointer;
+
+                        &:hover {
+                            height: 35px;
+                            width: 35px;
+                        }
+
+                        @include for-phone-only {
+                            height: 35px;
+                            width: 35px;
+                            position: absolute;
+                            left: 3px;
+                        }
+
+
+
+                    }
+
+                    button {
+                        color: aqua;
+                        font-size: 10px;
+                        background: transparent;
+                        cursor: pointer;
+                        outline: none;
+                        width: 40px;
+                        height: 20px;
+                        border: 0.5px solid aqua;
+                        font-weight: bold;
+                        padding: 0;
+
+                        @include for-tablet-only {
+                            position: absolute;
+                            right: 5px;
+                            bottom: 0px;
+                            font-size: 8px;
+                            width: 35px;
+                            height: 15px;
+                        }
+
+
+                        @include for-phone-only {
+                            position: absolute;
+                            right: 30%;
+                            bottom: 20px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .chat {
+            @include for-phone-only {
+                flex: 2.5;
+            }
+
+            flex: 2;
+            background: transparent;
+            overflow: hidden;
+
+
+            .Head {
+                width: 100%;
+                height: 50px;
+                align-items: center;
+                background-color: rgba(247, 233, 233, 0.2);
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                color: aqua;
+
+                span {
+                    font-weight: bold;
+                    margin-left: 10px;
+                }
+
+                .friend {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    gap: 15px;
+                    padding: 10px 13px;
+
+                    .more:hover {
+                        height: 28px;
+                        width: 28px;
+                    }
+
+                    @include for-phone-only {
+                        gap: 8px;
+                    }
+                }
+            }
+
+            .chat-box {
+                height: calc(100% - 100px);
+                background: transparent;
+                padding: 10px;
+                overflow-y: scroll;
+
+
+                @include for-tablet-only {
+                    height: calc(100% - 90px);
+                }
+
+                @include for-phone-only {
+                    height: calc(100% - 80px);
+                }
+
+                .msg {
+                    display: flex;
+                    gap: 20px;
+                    margin-bottom: 20px;
+
+                    &.owner {
+                        flex-direction: row-reverse;
+
+                        .messageContent {
+                            align-items: flex-end;
+
+                            img {
+                                width: 50%;
+                            }
+
+                            p {
+                                background-color: rgba(247, 233, 233, 0.2);
+                                border-radius: 10px 0px 10px 10px;
+                                padding: 10px 15px;
+                                max-width: max-content;
+                                margin-top: 5px;
+                                color: aqua;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    .messageInfo {
+                        display: flex;
+                        flex-direction: column;
+                        font-weight: 300;
+                        color: rgb(153, 209, 231);
+
+
+                        span {
+                            font-size: 10px;
+
+                        }
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .messageContent {
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        
+
+
+                        p {
+                            background-color: white;
+                            padding: 10px 15px;
+                            max-width: max-content;
+                            margin-top: 5px;
+                            border-radius: 0px 10px 10px 10px;
+                            color: black;
+                            font-weight: bold;
+                        }
+
+                        img {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+
+
+            .Bottom {
+                height: 50px;
+                background-color: rgba(247, 233, 233, 0.2);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                padding-right: 0;
+
+                @include for-tablet-only {
+                    height: 40px;
+                }
+
+                @include for-phone-only {
+                    height: 30px;
+                }
+
+                .text {
+                    flex: 2.3;
+
+                    @include for-tablet-only {
+                        flex: 1.5;
+                    }
+
+                    input {
+                        background: transparent;
+                        font-size: 20px;
+
+                        width: 100%;
+                        height: 30px;
+                        border: none;
+                        color: aqua;
+                        padding-bottom: 5px;
+                        padding-left: 10px;
+                        border-bottom: 1px solid aqua;
+                        outline: none;
+
+                        @include for-tablet-only {
+                            font-size: 15px;
+                        }
+
+                        @include for-phone-only {
+                            font-size: 12px;
+                        }
+
+
+
+
+                        &::placeholder {
+                            color: rgb(224, 217, 217);
+                        }
+                    }
+                }
+
+                .icons {
+                    flex: 0.7;
+
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    cursor: pointer;
+                    color: aqua;
+
+
+
+                    label {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    .icon {
+                        @include for-phone-only {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+
+                    .icon:hover {
+                        width: 30px;
+                        height: 30px;
+                    }
+
+
+
+                    button {
+                        cursor: pointer;
+                        background-color: aqua;
+                        padding: 7px;
+                        color: white;
+                        border: none;
+                        font-weight: bold;
+                   
+                    }
+
+                }
+
+
+            }
+
+
+
+        }
+    }
+
+
+}
