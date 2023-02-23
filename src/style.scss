@@ -80,6 +80,7 @@ body {
             border-radius: 20px;
             border: 5px solid aqua;
             box-shadow: 5px 5px 5px aqua;
+            min-height: 400px;
 
             form {
                 display: flex;
@@ -207,28 +208,30 @@ body {
     .container {
         border: 5px solid aqua;
         display: flex;
-        max-height: 700px;
+        max-height: 900px;
         width: 60%;
-        height: 90%;
+        height: 95%;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 2px 5px 8px aqua;
 
-        @include for-tablet-only {
-            max-width: 500px;
-            width: 90%;
-        }
-
-        @include for-phone-only {
-            width: 98%;
-            height: 90%;
-        }
-
         @include for-laptop-only() {
             width: 85%;
-            max-width: 600px;
+            max-width: 700px;
+            height: 90%;
         }
-
+        
+        @include for-tablet-only {
+            max-width: 600px;
+            width: 95%;
+            height: 95%;
+        }
+        
+        
+        @include for-phone-only {
+            width: 95%;
+            height: 98%;
+        }
 
 
 
