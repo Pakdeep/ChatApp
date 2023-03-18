@@ -290,8 +290,8 @@ body {
                     object-fit: cover;
 
                     @include for-phone-only {
-                        width: 26px;
-                        height: 26px;
+                       width: 20px;
+                       height: 20px;
                     }
                 }
             }
@@ -369,7 +369,7 @@ body {
                         @include for-phone-only {
                             position: absolute;
                             right: 5px;
-                        font-size: 12px;
+                        font-size: 10px;
 
                         }
                     }
@@ -388,8 +388,8 @@ body {
                         }
 
                         @include for-phone-only {
-                            height: 35px;
-                            width: 35px;
+                            height: 20px;
+                            width: 20px;
                             position: absolute;
                             left: 3px;
                         }
@@ -422,7 +422,7 @@ body {
 
                         @include for-phone-only {
                             position: absolute;
-                            right: 25%;
+                            right: 15%;
                             bottom: 20px;
                             width: 50px;
                             height: 20px;
